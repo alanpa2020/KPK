@@ -3,10 +3,14 @@
 //! @mainpage
 //! @brief Библиотека для экранизации бестеллера всех времен и некоторых народов сказки "Репка"
 //!         $Date: 2020-02-27 13:30:00 +0400 $
-//! @par    Библиотека репка
+//! @par    Статичные персонажи
 //! - Рисуем дедку @ref dedus_draw
 //! - Рисуем бабку @ref babus_draw
 //! - Рисуем внучку @ref vnuchkas_draw
+//! @par    Процедуры для движения персонажей
+//! - Двигаем дедку @ref dedus_move
+//! - Двигаем бабку @ref babus_move
+//! - Двигаем внучку и бабулю @ref babus_vnuchkas_move
 //}
 #include "TXLib.h"
 COLORREF color_gray (int a);
@@ -17,7 +21,7 @@ COLORREF color_gray (int a);
 //! @param move Двигается ли дедус? true или false
 //! @param scale масштаб. По умолчанию двоечка
 //! @param clothes_color цвет одежды
-//! @see @ref babus_draw
+//! @see babus_draw(), vnuchkas_draw()
 //}
 void dedus_draw (int x, int y, bool move = true , int scale = 2, COLORREF clothes_color=color_gray(100));
 //{
@@ -27,6 +31,7 @@ void dedus_draw (int x, int y, bool move = true , int scale = 2, COLORREF clothe
 //! @param scale масштаб. По умолчанию двоечка
 //! @param clothes_color цвет одежды
 //! @param kerchief_color цвет косынки
+//! @see dedus_draw(), vnuchkas_draw()
 //}
 void babus_draw (int x, int y, int scale = 2, COLORREF clothes_color=color_gray(200), COLORREF kerchief_color=color_gray(50));
 //{
@@ -36,6 +41,7 @@ void babus_draw (int x, int y, int scale = 2, COLORREF clothes_color=color_gray(
 //! @param scale масштаб. По умолчанию двоечка
 //! @param clothes_color цвет одежды
 //! @param kerchief_color цвет косынки
+//! @see babus_draw(), vnuchkas_draw()
 //}
 void vnuchkas_draw (int x, int y, int scale = 2, COLORREF clothes_color=color_gray(250), COLORREF kerchief_color=color_gray(200));
 void sharics_draw (int x, int y, int scale = 2, COLORREF clothes_color=color_gray(200));
