@@ -1,6 +1,7 @@
 #include "TXLib.h"
 #include <math.h>
 const int lenWorms = 50;
+const int N = 10;
 struct Ball {
     double x, y;
     double dx, dy;
@@ -18,21 +19,30 @@ struct Worm {
     void draw ();
 };
 
+bool CollisionDetect (Ball ball1, Ball ball2);
+
 int main(){
     txBegin;
     txTextCursor (false);
     txCreateWindow(800,600);
-    Worm worm [6];
-    for (int i = 0; i< 6; i++) {
+    Worm worm [N];
+    for (int i = 0; i< N; i++) {
         worm[i].init();
     }
     while (true) {
         txSetFillColor(RGB(0, 0, 0));
         //txClear ();
-        for (int i = 0; i< 6; i++) {
+        for (int i = 0; i< N; i++) {
             worm[i].draw();
         }
-        for (int i = 0; i< 6; i++) {
+        for (int i = 0; i< N-1; i++) {
+            for (int j = 1; j< N; j++) {
+                if (CollisionDetect (worm[i].ball[0], worm[j].ball[0]) == true) {
+                    std::swap (worm[i].ball[0].dx, worm[j].ball[0].dx);
+                }
+            }
+        }
+        for (int i = 0; i< N; i++) {
             worm[i].move();
         }
         txSleep(2);
@@ -101,7 +111,11 @@ void Worm::move () {
     }
 }
 
-
+bool CollisionDetect (Ball ball1, Ball ball2) {
+    float dist = sqrt ((ball1.x - ball2.x)*(ball1.x - ball2.x)+(ball1.y - ball2.y)*(ball1.y - ball2.y));
+    if (dist < ball1.r + ball2.r ) return true;
+    return false;
+}
 
 
 
