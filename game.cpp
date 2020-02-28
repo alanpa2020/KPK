@@ -1,8 +1,8 @@
 #include "TXLib.h"
 
 struct Ball {
-    int x, y;
-    int vx, vy;
+    double x, y;
+    double vx, vy;
     int r;
     bool visible;
     COLORREF color, bgcolor;
@@ -23,33 +23,41 @@ struct Bita {
 
 const int WIN_X = 800;
 const int WIN_Y = 600;
-const int N = 15;
-void balls_move (Ball* balls);
+const int N = 25;
+const int PAUSE = 20;
+
+void game_1 ();
+bool CollisionDetect (Ball ball1, Ball ball2);
 
 int main(){
     txBegin;
     txTextCursor (false);
     txCreateWindow (WIN_X, WIN_Y);
-    //создаем массив м€чиков
+
+    game_1 ();
+}
+
+void game_1 () {
+    int scoreL = 0;
+    int scoreR = 0;
+    //создание и генераци€ массива м€чиков
     Ball balls [N];
     for (int i = 0; i < N; i++) {
         do {
-            balls [i] = {rand() % WIN_X , rand() % WIN_Y, rand() % 7 - 3, rand() % 7 - 3, 10, true, RGB (255, 255, 255), RGB (rand() % 255, rand() % 255, 255)};
+            balls [i] = {rand() % WIN_X, rand() % WIN_Y, rand() % 7 - 3, rand() % 7 - 3, 10, true, RGB (255, 255, 255), RGB (rand() % 255, rand() % 255, 255)};
         }
         while ((balls[i].vx == 0) or (balls[i].vy == 0)) ;
     }
-    balls_move (balls);
-}
 
-void balls_move (Ball* balls) {
-    int scoreL = 0;
-    int scoreR = 0;
-
+    //создание бит
     Bita bitaL = {10, 100, 10, 100, 5};
     Bita bitaR = {WIN_X-20, 100, 10, 100, 5};
+
+    //игровой цикл пока не ESC и есть м€чики на поле
     while ((!txGetAsyncKeyState (VK_ESCAPE)) & (scoreL + scoreR < N)) {
-        bitaL.vy *= 0.9;
-        bitaR.vy *= 0.9;
+        bitaL.vy *= 0.9;       //дл€ затормаживани€ бит
+        bitaR.vy *= 0.9;//дл€ затормаживани€ бит
+        //управление бит с клавиатуры
         if (txGetAsyncKeyState ('W') and (bitaL.vy > -10)){
             bitaL.vy--;
         }
@@ -76,28 +84,45 @@ void balls_move (Ball* balls) {
         bitaL.physics ();
         bitaR.draw ();
         bitaR.physics ();
+        //провер€ем все на столкновение с битами
         for (int i = 0; i < N; i++ ){
             if (balls[i].visible) {
                 balls[ i ].draw ();
                 balls[ i ].physics (&scoreL, &scoreR);
                 //взаимодействие с битой???
-                if ((balls[ i ].x < bitaL.x + bitaL.width) & (balls[ i ].y > bitaL.y) & (balls[ i ].y < bitaL.y + bitaL.height)){
-                    balls[ i ].vx = -balls[ i ].vx;
-                    balls[ i ].x = 50; //balls[ i ].r;
+                if ((balls[ i ].x < bitaL.x + bitaL.width) && (balls[ i ].y > bitaL.y) && (balls[ i ].y < bitaL.y + bitaL.height)){
+                    balls[ i ].vx = -balls[ i ].vx * 1.2;
+                    balls[ i ].x = 35; //balls[ i ].r;
                 }
-                if ((balls[ i ].x > bitaR.x) & (balls[ i ].y > bitaR.y) & (balls[ i ].y < bitaR.y + bitaR.height)){
-                    balls[ i ].vx = -balls[ i ].vx;
-                    balls[ i ].x = WIN_X-50; //balls[ i ].r;
+                if ((balls[ i ].x > bitaR.x) && (balls[ i ].y > bitaR.y) && (balls[ i ].y < bitaR.y + bitaR.height)){
+                    balls[ i ].vx = -balls[ i ].vx * 1.2;
+                    balls[ i ].x = WIN_X-35; //balls[ i ].r;
                 }
             }
         }
-        txSleep (15);
+        //провер€ем все на столкновение друг с другом
+        for (int i = 0; i < N-1; i++){
+            for (int j = i+1; j < N-1; j++ ){
+                if ((CollisionDetect (balls[i], balls[j]) == true) && (balls[i].visible && balls[j].visible == true)) {
+                    std::swap (balls[i].vx, balls[j].vx);
+                    std::swap (balls[i].vy, balls[j].vy);
+                    balls[i].bgcolor = rand();
+                    balls[j].bgcolor = rand();
+                }
+            }
+        }
+        txSleep (PAUSE);
+
+        //пауза по кнопке P
         if (txGetAsyncKeyState ('P')){
             while (!txGetAsyncKeyState (VK_SPACE)) {
+                txTextOut  (WIN_X/2-250,300,"ѕауза - пробел");
+                txRedrawWindow ();
                 txSleep(15);
             }
 
         }
+        //хелпик по кнопке F1
         if (txGetAsyncKeyState (VK_F1)){
             txMessageBox (" лавиши такие:\nP - пауза\nW, S - левый игрок\
             nстрелка вверх, стрелка вниз - правый игрок\nпробел - выйти из состо€ни€ паузы", "ѕомощь");
@@ -133,16 +158,16 @@ void Ball::physics (int *scoreL, int *scoreR) {
 
     if (x < r) {
         vx = -vx;
-        x = r;
+        //x = r;
+        x = -50;
         visible = false;
-
         *scoreL +=1;
-
     }
 
     if (x > WIN_X-r) {
         vx = -vx;
-        x = WIN_X-r;
+        //x = WIN_X-r;
+        x = 10;
         visible = false;
         *scoreR +=1;
     }
@@ -182,7 +207,6 @@ void Bita::physics () {
     if (y < 0) {
         vy = -vy;
         y = 0;
-
     }
 
     if (y > WIN_Y-height) {
@@ -195,5 +219,11 @@ void Bita::draw (){
     txSetColor (color);
     txSetFillColor (RGB(255, 255, 255));
     txRectangle (x, y, x+width, y+height);
-
 }
+
+bool CollisionDetect (Ball ball1, Ball ball2) {
+    float dist = sqrt ((ball1.x - ball2.x)*(ball1.x - ball2.x)+(ball1.y - ball2.y)*(ball1.y - ball2.y));
+    if (dist < ball1.r + ball2.r ) return true;
+    return false;
+}
+
