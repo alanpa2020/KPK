@@ -1,0 +1,1193 @@
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\alexander\Documents\C\Classic\rnd_array.exe, файл: C:\Users\alexander\Desktop\KPK\TX\TXLib.h, строка: 11697, функция: POINT {anonymous}::TX::txGetExtent(HDC),
+
+Сообщение: Параметр "dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005062F4 (32-bit), Flags: CMdRe0, Thread: 0x14F4 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041BB2E in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtent() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11697)
+# 1 0x0041BCFB in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtentX() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11710)
+
+# 2 0x0042B70C in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: main() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (26):
+
+     24: 
+     25:     HDC card_img = txLoadImage ("Card.bmp");
+=>   26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+     28:     Page card = {cardX, cardY, card_img};
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in POINT {anonymous}::TX::txGetExtent(HDC) at C:\Users\alexander\Desktop\KPK\TX\TXLib.h (11697):
+
+  11695: $0  static POINT err = {-1, -1};
+  11696: 
+=>11697: $   if (_TX_DEFAULT_HDC_FAILED (dc)) return err;
+  11698: 
+  11699: $   BITMAP bmap = {0};
+
+# 1 in int main() at C:\Users\alexander\Documents\C\Classic\rnd_array.cpp (25):
+
+     23:     Page page = {pageX, pageY, page_img};
+     24: 
+=>   25:     HDC card_img = txLoadImage ("Card.bmp");
+     26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\alexander\Desktop\KPK\TX\TXLib.h
+Compiled:	Mar  1 2020 13:05:23, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2020 13:05:27
+
+Run file:	C:\Users\alexander\Documents\C\Classic\rnd_array.exe
+Directory:	C:\Users\alexander\Documents\C\Classic
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\alexander\Documents\C\Classic\rnd_array.exe, файл: C:\Users\alexander\Desktop\KPK\TX\TXLib.h, строка: 11697, функция: POINT {anonymous}::TX::txGetExtent(HDC),
+
+Сообщение: Параметр "dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005062F4 (32-bit), Flags: CMdRe0, Thread: 0x894 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041BB2E in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtent() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11697)
+# 1 0x0041BCFB in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtentX() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11710)
+
+# 2 0x0042B70C in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: main() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (26):
+
+     24: 
+     25:     HDC card_img = txLoadImage ("Card.bmp");
+=>   26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+     28:     Page card = {cardX, cardY, card_img};
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in POINT {anonymous}::TX::txGetExtent(HDC) at C:\Users\alexander\Desktop\KPK\TX\TXLib.h (11697):
+
+  11695: $0  static POINT err = {-1, -1};
+  11696: 
+=>11697: $   if (_TX_DEFAULT_HDC_FAILED (dc)) return err;
+  11698: 
+  11699: $   BITMAP bmap = {0};
+
+# 1 in int main() at C:\Users\alexander\Documents\C\Classic\rnd_array.cpp (25):
+
+     23:     Page page = {pageX, pageY, page_img};
+     24: 
+=>   25:     HDC card_img = txLoadImage ("Card.bmp");
+     26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\alexander\Desktop\KPK\TX\TXLib.h
+Compiled:	Mar  1 2020 13:06:16, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2020 13:06:20
+
+Run file:	C:\Users\alexander\Documents\C\Classic\rnd_array.exe
+Directory:	C:\Users\alexander\Documents\C\Classic
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\alexander\Documents\C\Classic\rnd_array.exe, файл: C:\Users\alexander\Desktop\KPK\TX\TXLib.h, строка: 11697, функция: POINT {anonymous}::TX::txGetExtent(HDC),
+
+Сообщение: Параметр "dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005062F4 (32-bit), Flags: CMdRe0, Thread: 0x914 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041BB2E in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtent() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11697)
+# 1 0x0041BCFB in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtentX() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11710)
+
+# 2 0x0042B70C in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: main() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (26):
+
+     24: 
+     25:     HDC card_img = txLoadImage ("Card.bmp");
+=>   26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+     28:     Page card = {cardX, cardY, card_img};
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in POINT {anonymous}::TX::txGetExtent(HDC) at C:\Users\alexander\Desktop\KPK\TX\TXLib.h (11697):
+
+  11695: $0  static POINT err = {-1, -1};
+  11696: 
+=>11697: $   if (_TX_DEFAULT_HDC_FAILED (dc)) return err;
+  11698: 
+  11699: $   BITMAP bmap = {0};
+
+# 1 in int main() at C:\Users\alexander\Documents\C\Classic\rnd_array.cpp (25):
+
+     23:     Page page = {pageX, pageY, page_img};
+     24: 
+=>   25:     HDC card_img = txLoadImage ("Card.bmp");
+     26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\alexander\Desktop\KPK\TX\TXLib.h
+Compiled:	Mar  1 2020 13:06:52, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2020 13:06:57
+
+Run file:	C:\Users\alexander\Documents\C\Classic\rnd_array.exe
+Directory:	C:\Users\alexander\Documents\C\Classic
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\alexander\Documents\C\Classic\rnd_array.exe, файл: C:\Users\alexander\Desktop\KPK\TX\TXLib.h, строка: 11697, функция: POINT {anonymous}::TX::txGetExtent(HDC),
+
+Сообщение: Параметр "dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005062F4 (32-bit), Flags: CMdRe0, Thread: 0x16CC (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041BB2E in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtent() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11697)
+# 1 0x0041BCFB in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtentX() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11710)
+
+# 2 0x0042B70C in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: main() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (26):
+
+     24: 
+     25:     HDC card_img = txLoadImage ("Card.bmp");
+=>   26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+     28:     Page card = {cardX, cardY, card_img};
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in POINT {anonymous}::TX::txGetExtent(HDC) at C:\Users\alexander\Desktop\KPK\TX\TXLib.h (11697):
+
+  11695: $0  static POINT err = {-1, -1};
+  11696: 
+=>11697: $   if (_TX_DEFAULT_HDC_FAILED (dc)) return err;
+  11698: 
+  11699: $   BITMAP bmap = {0};
+
+# 1 in int main() at C:\Users\alexander\Documents\C\Classic\rnd_array.cpp (25):
+
+     23:     Page page = {pageX, pageY, page_img};
+     24: 
+=>   25:     HDC card_img = txLoadImage ("Card.bmp");
+     26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\alexander\Desktop\KPK\TX\TXLib.h
+Compiled:	Mar  1 2020 13:08:01, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2020 13:08:06
+
+Run file:	C:\Users\alexander\Documents\C\Classic\rnd_array.exe
+Directory:	C:\Users\alexander\Documents\C\Classic
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\alexander\Documents\C\Classic\rnd_array.exe, файл: C:\Users\alexander\Desktop\KPK\TX\TXLib.h, строка: 11697, функция: POINT {anonymous}::TX::txGetExtent(HDC),
+
+Сообщение: Параметр "dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005062F4 (32-bit), Flags: CMdRe0, Thread: 0x1620 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041BB2E in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtent() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11697)
+# 1 0x0041BCFB in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtentX() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11710)
+
+# 2 0x0042B70C in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: main() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (26):
+
+     24: 
+     25:     HDC card_img = txLoadImage ("Card.bmp");
+=>   26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+     28:     Page card = {cardX, cardY, card_img};
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in POINT {anonymous}::TX::txGetExtent(HDC) at C:\Users\alexander\Desktop\KPK\TX\TXLib.h (11697):
+
+  11695: $0  static POINT err = {-1, -1};
+  11696: 
+=>11697: $   if (_TX_DEFAULT_HDC_FAILED (dc)) return err;
+  11698: 
+  11699: $   BITMAP bmap = {0};
+
+# 1 in int main() at C:\Users\alexander\Documents\C\Classic\rnd_array.cpp (25):
+
+     23:     Page page = {pageX, pageY, page_img};
+     24: 
+=>   25:     HDC card_img = txLoadImage ("Card.bmp");
+     26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\alexander\Desktop\KPK\TX\TXLib.h
+Compiled:	Mar  1 2020 13:08:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2020 13:08:24
+
+Run file:	C:\Users\alexander\Documents\C\Classic\rnd_array.exe
+Directory:	C:\Users\alexander\Documents\C\Classic
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\alexander\Documents\C\Classic\rnd_array.exe, файл: C:\Users\alexander\Desktop\KPK\TX\TXLib.h, строка: 11697, функция: POINT {anonymous}::TX::txGetExtent(HDC),
+
+Сообщение: Параметр "dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005062F4 (32-bit), Flags: CMdRe0, Thread: 0x1734 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041BB2E in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtent() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11697)
+# 1 0x0041BCFB in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtentX() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11710)
+
+# 2 0x0042B70C in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: main() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (26):
+
+     24: 
+     25:     HDC card_img = txLoadImage ("Card.bmp");
+=>   26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+     28:     Page card = {cardX, cardY, card_img};
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in POINT {anonymous}::TX::txGetExtent(HDC) at C:\Users\alexander\Desktop\KPK\TX\TXLib.h (11697):
+
+  11695: $0  static POINT err = {-1, -1};
+  11696: 
+=>11697: $   if (_TX_DEFAULT_HDC_FAILED (dc)) return err;
+  11698: 
+  11699: $   BITMAP bmap = {0};
+
+# 1 in int main() at C:\Users\alexander\Documents\C\Classic\rnd_array.cpp (25):
+
+     23:     Page page = {pageX, pageY, page_img};
+     24: 
+=>   25:     HDC card_img = txLoadImage ("Card.bmp");
+     26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\alexander\Desktop\KPK\TX\TXLib.h
+Compiled:	Mar  1 2020 13:08:39, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2020 13:08:44
+
+Run file:	C:\Users\alexander\Documents\C\Classic\rnd_array.exe
+Directory:	C:\Users\alexander\Documents\C\Classic
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\alexander\Documents\C\Classic\rnd_array.exe, файл: C:\Users\alexander\Desktop\KPK\TX\TXLib.h, строка: 11697, функция: POINT {anonymous}::TX::txGetExtent(HDC),
+
+Сообщение: Параметр "dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005062F4 (32-bit), Flags: CMdRe0, Thread: 0x12E0 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041BB2E in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtent() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11697)
+# 1 0x0041BCFB in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtentX() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11710)
+
+# 2 0x0042B70C in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: main() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (26):
+
+     24: 
+     25:     HDC card_img = txLoadImage ("Card.bmp");
+=>   26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+     28:     Page card = {cardX, cardY, card_img};
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in POINT {anonymous}::TX::txGetExtent(HDC) at C:\Users\alexander\Desktop\KPK\TX\TXLib.h (11697):
+
+  11695: $0  static POINT err = {-1, -1};
+  11696: 
+=>11697: $   if (_TX_DEFAULT_HDC_FAILED (dc)) return err;
+  11698: 
+  11699: $   BITMAP bmap = {0};
+
+# 1 in int main() at C:\Users\alexander\Documents\C\Classic\rnd_array.cpp (25):
+
+     23:     Page page = {pageX, pageY, page_img};
+     24: 
+=>   25:     HDC card_img = txLoadImage ("Card.bmp");
+     26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\alexander\Desktop\KPK\TX\TXLib.h
+Compiled:	Mar  1 2020 13:11:56, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2020 13:12:01
+
+Run file:	C:\Users\alexander\Documents\C\Classic\rnd_array.exe
+Directory:	C:\Users\alexander\Documents\C\Classic
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\alexander\Documents\C\Classic\rnd_array.exe, файл: C:\Users\alexander\Desktop\KPK\TX\TXLib.h, строка: 11697, функция: POINT {anonymous}::TX::txGetExtent(HDC),
+
+Сообщение: Параметр "dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005062F4 (32-bit), Flags: CMdRe0, Thread: 0x105C (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041BB2E in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtent() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11697)
+# 1 0x0041BCFB in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtentX() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11710)
+
+# 2 0x0042B70C in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: main() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (26):
+
+     24: 
+     25:     HDC card_img = txLoadImage ("Card.bmp");
+=>   26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+     28:     Page card = {cardX, cardY, card_img};
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in POINT {anonymous}::TX::txGetExtent(HDC) at C:\Users\alexander\Desktop\KPK\TX\TXLib.h (11697):
+
+  11695: $0  static POINT err = {-1, -1};
+  11696: 
+=>11697: $   if (_TX_DEFAULT_HDC_FAILED (dc)) return err;
+  11698: 
+  11699: $   BITMAP bmap = {0};
+
+# 1 in int main() at C:\Users\alexander\Documents\C\Classic\rnd_array.cpp (25):
+
+     23:     Page page = {pageX, pageY, page_img};
+     24: 
+=>   25:     HDC card_img = txLoadImage ("Card.bmp");
+     26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\alexander\Desktop\KPK\TX\TXLib.h
+Compiled:	Mar  1 2020 13:13:34, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2020 13:13:38
+
+Run file:	C:\Users\alexander\Documents\C\Classic\rnd_array.exe
+Directory:	C:\Users\alexander\Documents\C\Classic
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\alexander\Documents\C\Classic\rnd_array.exe, файл: C:\Users\alexander\Desktop\KPK\TX\TXLib.h, строка: 11697, функция: POINT {anonymous}::TX::txGetExtent(HDC),
+
+Сообщение: Параметр "dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005062F4 (32-bit), Flags: CMdRe0, Thread: 0x159C (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041BB2E in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtent() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11697)
+# 1 0x0041BCFB in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtentX() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11710)
+
+# 2 0x0042B70C in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: main() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (26):
+
+     24: 
+     25:     HDC card_img = txLoadImage ("Card.bmp");
+=>   26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+     28:     //Page card = {cardX, cardY, card_img};
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in POINT {anonymous}::TX::txGetExtent(HDC) at C:\Users\alexander\Desktop\KPK\TX\TXLib.h (11697):
+
+  11695: $0  static POINT err = {-1, -1};
+  11696: 
+=>11697: $   if (_TX_DEFAULT_HDC_FAILED (dc)) return err;
+  11698: 
+  11699: $   BITMAP bmap = {0};
+
+# 1 in int main() at C:\Users\alexander\Documents\C\Classic\rnd_array.cpp (25):
+
+     23:     Page page = {pageX, pageY, page_img};
+     24: 
+=>   25:     HDC card_img = txLoadImage ("Card.bmp");
+     26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\alexander\Desktop\KPK\TX\TXLib.h
+Compiled:	Mar  1 2020 13:15:36, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2020 13:15:41
+
+Run file:	C:\Users\alexander\Documents\C\Classic\rnd_array.exe
+Directory:	C:\Users\alexander\Documents\C\Classic
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\alexander\Documents\C\Classic\rnd_array.exe, файл: C:\Users\alexander\Desktop\KPK\TX\TXLib.h, строка: 11697, функция: POINT {anonymous}::TX::txGetExtent(HDC),
+
+Сообщение: Параметр "dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005062F4 (32-bit), Flags: CMdRe0, Thread: 0x17E0 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041BB2E in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtent() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11697)
+# 1 0x0041BCFB in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txGetExtentX() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (11710)
+
+# 2 0x0042B70C in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: main() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (26):
+
+     24: 
+     25:     HDC card_img = txLoadImage ("Card.bmp");
+=>   26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+     28:     //Page card = {cardX, cardY, card_img};
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in POINT {anonymous}::TX::txGetExtent(HDC) at C:\Users\alexander\Desktop\KPK\TX\TXLib.h (11697):
+
+  11695: $0  static POINT err = {-1, -1};
+  11696: 
+=>11697: $   if (_TX_DEFAULT_HDC_FAILED (dc)) return err;
+  11698: 
+  11699: $   BITMAP bmap = {0};
+
+# 1 in int main() at C:\Users\alexander\Documents\C\Classic\rnd_array.cpp (25):
+
+     23:     Page page = {pageX, pageY, page_img};
+     24: 
+=>   25:     HDC card_img = txLoadImage ("Card.bmp");
+     26:     int cardX = txGetExtentX (card_img);
+     27:     int cardY = txGetExtentY (card_img);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\alexander\Desktop\KPK\TX\TXLib.h
+Compiled:	Mar  1 2020 13:33:27, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2020 13:33:32
+
+Run file:	C:\Users\alexander\Documents\C\Classic\rnd_array.exe
+Directory:	C:\Users\alexander\Documents\C\Classic
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\alexander\Documents\C\Classic\rnd_array.exe, файл: C:\Users\alexander\Desktop\KPK\TX\TXLib.h, строка: 12351, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {65533, 288, 65604, 384} не полностью лежит внутри изображения-источника {0, 0, 923, 576}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005062F4 (32-bit), Flags: CMdRe0, Thread: 0x1328 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\alexander\Desktop\KPK\TX\TXLib.h (12350) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423543 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txAlphaBlend() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (12351)
+
+# 1 0x0042B963 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: output_arr() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (61):
+
+     59:     for (int i = 0; i<10; i++) {
+     60:         card_range = a[i];
+=>   61:         txAlphaBlend (txDC(), i*90, 50, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range, (p -> page_Y / 6)*card_suit );
+     62:     }
+     63:     $x (p -> page_X);
+
+# 2 0x0042B774 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: main() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (40):
+
+     38:     create_arr (a);
+     39:     //output_arr (a, &page);
+=>   40:     output_arr (a, &card);
+     41: 
+     42:     //txDeleteDC (page_img);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\alexander\Desktop\KPK\TX\TXLib.h (12350):
+
+  12348:         {
+  12349: $       SetLastError (ERROR_INVALID_DATA);
+=>12350: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, функция "
+  12351:                   "txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  12352:         }
+
+# 1 in void output_arr(int*, Page*) at C:\Users\alexander\Documents\C\Classic\rnd_array.cpp (61):
+
+     59:     for (int i = 0; i<10; i++) {
+     60:         card_range = a[i];
+=>   61:         txAlphaBlend (txDC(), i*90, 50, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range, (p -> page_Y / 6)*card_suit );
+     62:     }
+     63:     $x (p -> page_X);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\alexander\Desktop\KPK\TX\TXLib.h
+Compiled:	Mar  1 2020 14:14:24, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2020 14:14:28
+
+Run file:	C:\Users\alexander\Documents\C\Classic\rnd_array.exe
+Directory:	C:\Users\alexander\Documents\C\Classic
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\alexander\Documents\C\Classic\rnd_array.exe, файл: C:\Users\alexander\Desktop\KPK\TX\TXLib.h, строка: 12351, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {65533, 288, 65604, 384} не полностью лежит внутри изображения-источника {0, 0, 923, 576}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005062F4 (32-bit), Flags: CMdRe0, Thread: 0x1144 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\alexander\Desktop\KPK\TX\TXLib.h (12350) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423543 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txAlphaBlend() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (12351)
+
+# 1 0x0042B963 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: output_arr() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (61):
+
+     59:     for (int i = 0; i<10; i++) {
+     60:         card_range = a[i];
+=>   61:         txAlphaBlend (txDC(), i*90, 50, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range, (p -> page_Y / 6)*card_suit );
+     62:     }
+     63:     $x (p -> page_X);
+
+# 2 0x0042B774 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: main() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (40):
+
+     38:     create_arr (a);
+     39:     //output_arr (a, &page);
+=>   40:     output_arr (a, &card);
+     41: 
+     42:     //txDeleteDC (page_img);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\alexander\Desktop\KPK\TX\TXLib.h (12350):
+
+  12348:         {
+  12349: $       SetLastError (ERROR_INVALID_DATA);
+=>12350: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, функция "
+  12351:                   "txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  12352:         }
+
+# 1 in void output_arr(int*, Page*) at C:\Users\alexander\Documents\C\Classic\rnd_array.cpp (61):
+
+     59:     for (int i = 0; i<10; i++) {
+     60:         card_range = a[i];
+=>   61:         txAlphaBlend (txDC(), i*90, 50, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range, (p -> page_Y / 6)*card_suit );
+     62:     }
+     63:     $x (p -> page_X);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\alexander\Desktop\KPK\TX\TXLib.h
+Compiled:	Mar  1 2020 14:14:59, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2020 14:15:03
+
+Run file:	C:\Users\alexander\Documents\C\Classic\rnd_array.exe
+Directory:	C:\Users\alexander\Documents\C\Classic
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\alexander\Documents\C\Classic\rnd_array.exe, файл: C:\Users\alexander\Desktop\KPK\TX\TXLib.h, строка: 12351, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {65533, 288, 65604, 384} не полностью лежит внутри изображения-источника {0, 0, 923, 576}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005062F4 (32-bit), Flags: CMdRe0, Thread: 0x1480 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\alexander\Desktop\KPK\TX\TXLib.h (12350) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423543 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txAlphaBlend() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (12351)
+
+# 1 0x0042B960 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: output_arr() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (61):
+
+     59:     for (int i = 0; i<10; i++) {
+     60:         card_range = a[i];
+=>   61:         txAlphaBlend (txDC(), i*90, 50, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range, (p -> page_Y / 6)*card_suit );
+     62:     }
+     63:     $x (p -> page_X);
+
+# 2 0x0042B774 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: main() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (40):
+
+     38:     create_arr (a);
+     39:     //output_arr (a, &page);
+=>   40:     output_arr (a, &card);
+     41: 
+     42:     //txDeleteDC (page_img);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\alexander\Desktop\KPK\TX\TXLib.h (12350):
+
+  12348:         {
+  12349: $       SetLastError (ERROR_INVALID_DATA);
+=>12350: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, функция "
+  12351:                   "txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  12352:         }
+
+# 1 in void output_arr(int*, Page*) at C:\Users\alexander\Documents\C\Classic\rnd_array.cpp (61):
+
+     59:     for (int i = 0; i<10; i++) {
+     60:         card_range = a[i];
+=>   61:         txAlphaBlend (txDC(), i*90, 50, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range, (p -> page_Y / 6)*card_suit );
+     62:     }
+     63:     $x (p -> page_X);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\alexander\Desktop\KPK\TX\TXLib.h
+Compiled:	Mar  1 2020 14:15:21, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2020 14:15:26
+
+Run file:	C:\Users\alexander\Documents\C\Classic\rnd_array.exe
+Directory:	C:\Users\alexander\Documents\C\Classic
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\alexander\Documents\C\Classic\rnd_array.exe, файл: C:\Users\alexander\Desktop\KPK\TX\TXLib.h, строка: 12351, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {65533, 288, 65604, 384} не полностью лежит внутри изображения-источника {0, 0, 923, 576}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005062F4 (32-bit), Flags: CMdRe0, Thread: 0xE28 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\alexander\Desktop\KPK\TX\TXLib.h (12350) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423543 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txAlphaBlend() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (12351)
+
+# 1 0x0042B960 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: output_arr() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (61):
+
+     59:     for (int i = 0; i<10; i++) {
+     60:         card_range = a[i];
+=>   61:         txAlphaBlend (txDC(), i*90, 50, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range, (p -> page_Y / 6)*card_suit );
+     62:     }
+     63:     $x (p -> page_X);
+
+# 2 0x0042B774 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: main() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (40):
+
+     38:     create_arr (a);
+     39:     //output_arr (a, &page);
+=>   40:     output_arr (a, &card);
+     41: 
+     42:     //txDeleteDC (page_img);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\alexander\Desktop\KPK\TX\TXLib.h (12350):
+
+  12348:         {
+  12349: $       SetLastError (ERROR_INVALID_DATA);
+=>12350: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, функция "
+  12351:                   "txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  12352:         }
+
+# 1 in void output_arr(int*, Page*) at C:\Users\alexander\Documents\C\Classic\rnd_array.cpp (61):
+
+     59:     for (int i = 0; i<10; i++) {
+     60:         card_range = a[i];
+=>   61:         txAlphaBlend (txDC(), i*90, 50, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range, (p -> page_Y / 6)*card_suit );
+     62:     }
+     63:     $x (p -> page_X);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\alexander\Desktop\KPK\TX\TXLib.h
+Compiled:	Mar  1 2020 14:17:54, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2020 14:17:59
+
+Run file:	C:\Users\alexander\Documents\C\Classic\rnd_array.exe
+Directory:	C:\Users\alexander\Documents\C\Classic
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\alexander\Documents\C\Classic\rnd_array.exe, файл: C:\Users\alexander\Desktop\KPK\TX\TXLib.h, строка: 12351, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {65531, 288, 65602, 384} не полностью лежит внутри изображения-источника {0, 0, 923, 576}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005062F4 (32-bit), Flags: CMdRe0, Thread: 0x1260 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\alexander\Desktop\KPK\TX\TXLib.h (12350) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423543 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txAlphaBlend() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (12351)
+
+# 1 0x0042B963 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: output_arr() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (61):
+
+     59:     for (int i = 0; i<10; i++) {
+     60:         card_range = a[i];
+=>   61:         txAlphaBlend (txDC(), i*90, 50, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range-2, (p -> page_Y / 6)*card_suit );
+     62:     }
+     63:     $x (p -> page_X);
+
+# 2 0x0042B774 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: main() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (40):
+
+     38:     create_arr (a);
+     39:     //output_arr (a, &page);
+=>   40:     output_arr (a, &card);
+     41: 
+     42:     //txDeleteDC (page_img);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\alexander\Desktop\KPK\TX\TXLib.h (12350):
+
+  12348:         {
+  12349: $       SetLastError (ERROR_INVALID_DATA);
+=>12350: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, функция "
+  12351:                   "txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  12352:         }
+
+# 1 in void output_arr(int*, Page*) at C:\Users\alexander\Documents\C\Classic\rnd_array.cpp (61):
+
+     59:     for (int i = 0; i<10; i++) {
+     60:         card_range = a[i];
+=>   61:         txAlphaBlend (txDC(), i*90, 50, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range-2, (p -> page_Y / 6)*card_suit );
+     62:     }
+     63:     $x (p -> page_X);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\alexander\Desktop\KPK\TX\TXLib.h
+Compiled:	Mar  1 2020 14:18:33, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2020 14:18:38
+
+Run file:	C:\Users\alexander\Documents\C\Classic\rnd_array.exe
+Directory:	C:\Users\alexander\Documents\C\Classic
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\alexander\Documents\C\Classic\rnd_array.exe, файл: C:\Users\alexander\Desktop\KPK\TX\TXLib.h, строка: 12351, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {65533, 288, 65604, 384} не полностью лежит внутри изображения-источника {0, 0, 923, 576}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005062F4 (32-bit), Flags: CMdRe0, Thread: 0x2FC (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\alexander\Desktop\KPK\TX\TXLib.h (12350) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423543 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txAlphaBlend() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (12351)
+
+# 1 0x0042B9A1 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: output_arr() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (62):
+
+     60:         card_range = a[i];
+     61:         $x (a[i]);
+=>   62:         txAlphaBlend (txDC(), i*90, 50, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range, (p -> page_Y / 6)*card_suit );
+     63:     }
+     64:     $x (p -> page_X);
+
+# 2 0x0042B774 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: main() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (40):
+
+     38:     create_arr (a);
+     39:     //output_arr (a, &page);
+=>   40:     output_arr (a, &card);
+     41: 
+     42:     //txDeleteDC (page_img);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\alexander\Desktop\KPK\TX\TXLib.h (12350):
+
+  12348:         {
+  12349: $       SetLastError (ERROR_INVALID_DATA);
+=>12350: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, функция "
+  12351:                   "txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  12352:         }
+
+# 1 in void output_arr(int*, Page*) at C:\Users\alexander\Documents\C\Classic\rnd_array.cpp (62):
+
+     60:         card_range = a[i];
+     61:         $x (a[i]);
+=>   62:         txAlphaBlend (txDC(), i*90, 50, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range, (p -> page_Y / 6)*card_suit );
+     63:     }
+     64:     $x (p -> page_X);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\alexander\Desktop\KPK\TX\TXLib.h
+Compiled:	Mar  1 2020 14:19:25, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2020 14:19:30
+
+Run file:	C:\Users\alexander\Documents\C\Classic\rnd_array.exe
+Directory:	C:\Users\alexander\Documents\C\Classic
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\alexander\Documents\C\Classic\rnd_array.exe, файл: C:\Users\alexander\Desktop\KPK\TX\TXLib.h, строка: 12351, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {65533, 288, 65604, 384} не полностью лежит внутри изображения-источника {0, 0, 923, 576}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005062F4 (32-bit), Flags: CMdRe0, Thread: 0x136C (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\alexander\Desktop\KPK\TX\TXLib.h (12350) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423543 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txAlphaBlend() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (12351)
+
+# 1 0x0042B9CD in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: output_arr() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (63):
+
+     61:         $x (a[i]);
+     62:         txSleep(100);
+=>   63:         txAlphaBlend (txDC(), i*90, 50, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range, (p -> page_Y / 6)*card_suit );
+     64:     }
+     65:     $x (p -> page_X);
+
+# 2 0x0042B774 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: main() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (40):
+
+     38:     create_arr (a);
+     39:     //output_arr (a, &page);
+=>   40:     output_arr (a, &card);
+     41: 
+     42:     //txDeleteDC (page_img);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\alexander\Desktop\KPK\TX\TXLib.h (12350):
+
+  12348:         {
+  12349: $       SetLastError (ERROR_INVALID_DATA);
+=>12350: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, функция "
+  12351:                   "txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  12352:         }
+
+# 1 in void output_arr(int*, Page*) at C:\Users\alexander\Documents\C\Classic\rnd_array.cpp (63):
+
+     61:         $x (a[i]);
+     62:         txSleep(100);
+=>   63:         txAlphaBlend (txDC(), i*90, 50, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range, (p -> page_Y / 6)*card_suit );
+     64:     }
+     65:     $x (p -> page_X);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\alexander\Desktop\KPK\TX\TXLib.h
+Compiled:	Mar  1 2020 14:20:00, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2020 14:20:05
+
+Run file:	C:\Users\alexander\Documents\C\Classic\rnd_array.exe
+Directory:	C:\Users\alexander\Documents\C\Classic
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\alexander\Documents\C\Classic\rnd_array.exe, файл: C:\Users\alexander\Desktop\KPK\TX\TXLib.h, строка: 12351, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {65533, 288, 65604, 384} не полностью лежит внутри изображения-источника {0, 0, 923, 576}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x1018 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\alexander\Desktop\KPK\TX\TXLib.h (12350) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423543 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txAlphaBlend() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (12351)
+
+# 1 0x0042BD45 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: swap_card() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (90):
+
+     88:     txAlphaBlend (txDC(), 20+card1*90, TOP_SPACE, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range, (p -> page_Y / 6)*card_suit );
+     89:     card_range = a[card2];
+=>   90:     txAlphaBlend (txDC(), 20+card2*90, TOP_SPACE, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range, (p -> page_Y / 6)*card_suit );
+     91:     txSleep (1000);
+     92: 
+
+# 2 0x0042B7ED in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: main() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (47):
+
+     45: 
+     46:     for (int i = 0; i<N; i++){
+=>   47:         swap_card (a, &card, i, i+1);
+     48:     }
+     49: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\alexander\Desktop\KPK\TX\TXLib.h (12350):
+
+  12348:         {
+  12349: $       SetLastError (ERROR_INVALID_DATA);
+=>12350: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, функция "
+  12351:                   "txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  12352:         }
+
+# 1 in void swap_card(int*, Page*, int, int) at C:\Users\alexander\Documents\C\Classic\rnd_array.cpp (90):
+
+     88:     txAlphaBlend (txDC(), 20+card1*90, TOP_SPACE, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range, (p -> page_Y / 6)*card_suit );
+     89:     card_range = a[card2];
+=>   90:     txAlphaBlend (txDC(), 20+card2*90, TOP_SPACE, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range, (p -> page_Y / 6)*card_suit );
+     91:     txSleep (1000);
+     92: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\alexander\Desktop\KPK\TX\TXLib.h
+Compiled:	Mar  1 2020 15:17:29, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2020 15:17:34
+
+Run file:	C:\Users\alexander\Documents\C\Classic\rnd_array.exe
+Directory:	C:\Users\alexander\Documents\C\Classic
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\alexander\Documents\C\Classic\rnd_array.exe, файл: C:\Users\alexander\Desktop\KPK\TX\TXLib.h, строка: 12351, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {923, 288, 994, 384} не полностью лежит внутри изображения-источника {0, 0, 923, 576}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005072F4 (32-bit), Flags: CMdRe0, Thread: 0x16CC (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\alexander\Desktop\KPK\TX\TXLib.h (12350) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423543 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: txAlphaBlend() at C:/Users/alexander/Desktop/KPK/TX/TXLib.h (12351)
+
+# 1 0x0042BAA8 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: output_arr() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (85):
+
+     83:         }
+     84:         txSleep(100);
+=>   85:         txAlphaBlend (txDC(), 20+i*90, TOP_SPACE, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range, (p -> page_Y / 6)*card_suit );
+     86:     }
+     87:     //$x (p -> page_X);
+
+# 2 0x0042B763 in C:\Users\alexander\Documents\C\Classic\rnd_array.exe: main() at C:/Users/alexander/Documents/C/Classic/rnd_array.cpp (42):
+
+     40:     create_arr (a);
+     41: 
+=>   42:     output_arr (a, &card, true);
+     43:     output_arr (a, &card, false);
+     44: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\alexander\Desktop\KPK\TX\TXLib.h (12350):
+
+  12348:         {
+  12349: $       SetLastError (ERROR_INVALID_DATA);
+=>12350: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, функция "
+  12351:                   "txAlphaBlend() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  12352:         }
+
+# 1 in void output_arr(int*, Page*, bool) at C:\Users\alexander\Documents\C\Classic\rnd_array.cpp (85):
+
+     83:         }
+     84:         txSleep(100);
+=>   85:         txAlphaBlend (txDC(), 20+i*90, TOP_SPACE, p -> page_X / 13, p -> page_Y / 6, p -> page_img, (p -> page_X / 13)*card_range, (p -> page_Y / 6)*card_suit );
+     86:     }
+     87:     //$x (p -> page_X);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\alexander\Desktop\KPK\TX\TXLib.h
+Compiled:	Mar  1 2020 15:52:28, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2020 15:52:33
+
+Run file:	C:\Users\alexander\Documents\C\Classic\rnd_array.exe
+Directory:	C:\Users\alexander\Documents\C\Classic
+
+--------------------------------------------------
