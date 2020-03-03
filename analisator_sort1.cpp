@@ -1,8 +1,17 @@
 #include "TXLib.h"
-const int N = 5;
+const int N = 6;
 int swaps_marge = 0;
 int sravn_marge = 0;
 const int scale_y = 50;
+
+struct ProgressBar {
+    double x, y;
+    double width, height;
+    double progress, max_value;
+    COLORREF color, colorFill;
+
+    void draw (int progr);
+} ;
 
 struct Button {
   int x, y;
@@ -15,9 +24,13 @@ struct Button {
   void draw();
 };
 
+
+//-----------------------------------------------------------------------------
+
 int show_menu (Button *Menu);
 void init_menu_select (Button *Menu);
 void bubble_sort ();
+void bubble_sort_plus ();
 void select_sort ();
 void merg_sort_for_stat ();
 void merge_sort (int *, int, int);
@@ -36,9 +49,10 @@ int main()
     Button Menu [N] = { {10,  10, 175, 30, "ПУЗЫРЁК", true,  TX_BLUE, TX_RED, TX_YELLOW, TX_YELLOW},
                         {10,  10+33*1, 175, 30, "ВЫБОР", false, TX_BLUE, TX_RED, TX_YELLOW, TX_YELLOW},
                         {10,  10+33*2, 175, 30, "СЛИЯНИЕ", false, TX_BLUE, TX_RED, TX_YELLOW, TX_YELLOW},
+                        {10,  10+33*3, 175, 30, "Пузырёк2", false, TX_BLUE, TX_RED, TX_YELLOW, TX_YELLOW},
 
-                        {10, 25+33*3, 175, 30, "ОЧИСТКА", false, TX_BLUE, TX_RED, TX_YELLOW, TX_YELLOW},
-                        {10, 25+33*4, 175, 30, "EXIT", false, TX_BLUE, TX_RED, TX_YELLOW, TX_YELLOW}};
+                        {10, 25+33*4, 175, 30, "ОЧИСТКА", false, TX_BLUE, TX_RED, TX_YELLOW, TX_YELLOW},
+                        {10, 25+33*5, 175, 30, "EXIT", false, TX_BLUE, TX_RED, TX_YELLOW, TX_YELLOW}};
 
 
     txSetFillColor (TX_BLUE);
@@ -58,7 +72,11 @@ int main()
         if (t == 0) bubble_sort ();
         if (t == 1) select_sort ();
         if (t == 2) merg_sort_for_stat ();
-        if (t == 3) {
+        if (t == 3) bubble_sort_plus ();
+
+
+
+        if (t == N-2) {
             txRectangle (200, 10, 200 + 300, 590);
             txRectangle (205 + 300, 10, 205 + 300 + 300, 590);
             txSelectFont ("System",25);
@@ -68,7 +86,7 @@ int main()
             txSetFillColor  (TX_BLUE);
             txRectangle (10, 225+33*4, 175+10, 600-10);
         };
-        if (t == 4) break;
+        if (t == N-1) break;
 
     }
     return 0;
@@ -76,6 +94,14 @@ int main()
 
 //-----------------------------------------------------------------------------
 
+void ProgressBar::draw(int p) {
+     txSetColor(color);
+     txSetFillColor(colorFill);
+     txRectangle (x, y, x+width, y+height);
+     txSetFillColor(color);
+     double progress_width = width / max_value * p;
+     txRectangle (x, y, x+progress_width, y+height);
+}
 
 void Button::draw () {
       txSelectFont ("System",25,12);
@@ -144,8 +170,10 @@ void init_menu_select (Button *Menu) {
 void bubble_sort (){
     int swaps = 0;
     int sravn = 0;
+    ProgressBar progbar = {10, 300, 175, 10, 0, 900, TX_YELLOW, TX_BLUE};
     for (int size_arr = 1; size_arr <900; size_arr++){
-        //int a [size_arr] = {0};
+        //progbar.progress = size_arr;
+        progbar.draw(size_arr);
         int a [size_arr];
         swaps = 0;
         sravn = 0;
@@ -170,9 +198,67 @@ void bubble_sort (){
             txCircle (200+size_arr/3, 590 - swaps/scale_y, 2);
         if (590 - sravn/scale_y > 17)
             txCircle (500+size_arr/3, 590 - sravn/scale_y, 2);
+
     }
 
     //Статистика
+    txSetColor (TX_YELLOW);
+    txSetFillColor (TX_BLUE);
+    txRectangle (10, 225+33*4, 175+10, 600-10);
+    txSelectFont ("System",24,15);
+    txTextOut  (10+5, 225+33*4+5,"Пузырёк");
+    txSelectFont ("System",20);
+    txTextOut  (10+5, 225+33*4+25,"Макс эл-ов:    900");
+    txTextOut  (10+5, 225+33*4+39,"Макс пер-к:");
+    char str [10];
+    sprintf(str, "%d", swaps);
+    txTextOut  (10+5+95, 225+33*4+39,str);
+    txTextOut  (10+5, 225+33*4+39+14,"Макс сравн:");
+    //char str [10];
+    sprintf(str, "%d", sravn);
+    txTextOut  (10+5+95, 225+33*4+39+14,str);
+
+
+}
+void bubble_sort_plus (){
+    int swaps = 0;
+    int sravn = 0;
+    ProgressBar progbar = {10, 300, 175, 10, 0, 900, TX_YELLOW, TX_BLUE};
+    for (int size_arr = 1; size_arr <900; size_arr++){
+        progbar.draw(size_arr);
+        //int a [size_arr] = {0};
+        int a [size_arr];
+        swaps = 0;
+        sravn = 0;
+        for (int i = 1; i<size_arr; i++){
+            a[i] = rand();
+        }
+        bool flag = 1;
+        int right = size_arr;
+        while (flag) {
+            flag = false;
+            for (int i = 0; i<right-1; i++){
+                sravn ++;
+                if (a[i] > a[i+1]) {
+                    int buf = a[i];
+                    a[i] = a[i+1];
+                    a[i+1] = buf;
+                    flag = 1;
+                    swaps ++;
+                }
+            }
+            right --;
+        }
+        txSetColor (TX_PINK);
+        if (590 - swaps/scale_y > 17)
+            txCircle (200+size_arr/3, 590 - swaps/scale_y, 2);
+        if (590 - sravn/scale_y > 17)
+            txCircle (500+size_arr/3, 590 - sravn/scale_y, 2);
+    }
+
+    //Статистика
+    txSetColor (TX_YELLOW);
+    txSetFillColor  (TX_BLUE);
     txRectangle (10, 225+33*4, 175+10, 600-10);
     txSelectFont ("System",24,15);
     txTextOut  (10+5, 225+33*4+5,"Пузырёк");
@@ -193,7 +279,9 @@ void bubble_sort (){
 void select_sort (){
     int swaps = 0;
     int sravn = 0;
+    ProgressBar progbar = {10, 300, 175, 10, 0, 900, TX_YELLOW, TX_BLUE};
     for (int size_arr = 1; size_arr <900; size_arr++){
+        progbar.draw(size_arr);
         //int a [size_arr] = {0};
         int a [size_arr];
         swaps = 0;
@@ -245,7 +333,9 @@ void select_sort (){
 void merg_sort_for_stat (){
     int swaps = 0;
     int sravn = 0;
+    ProgressBar progbar = {10, 300, 175, 10, 0, 900, TX_YELLOW, TX_BLUE};
     for (int size_arr = 1; size_arr <900; size_arr++){
+        progbar.draw(size_arr);
         //int a [size_arr] = {0};
         int a [size_arr];
 
